@@ -1,0 +1,205 @@
+/* Mobile */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  color: #444;
+}
+
+/* making background color a class so I can easily add/change multiple places */
+.bg-primary {
+  background-color: #fff0f3;
+}
+
+.container {
+  max-width: 1000px;
+  /* doing left and right so top/bottom doesn't conflict later */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.header {
+  padding: 2em 0;
+}
+
+.header .logo {
+  margin: 0;
+}
+
+/* space between name and nav */
+.header .nav {
+  margin-top: 2em;
+}
+
+.header .nav ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none; /* remove bullets */
+  text-transform: uppercase;
+}
+
+/* target li adjacent to li (not top and bottom) */
+.header .nav li + li {
+  margin-top: 5px;
+}
+
+.header .nav a {
+  background-color: white;
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #444444;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+h2 {
+  text-transform: uppercase;
+}
+
+.hero {
+  line-height: 1.75rem;
+  padding-bottom: 2em;
+}
+
+.hero .avatar {
+  max-width: 80%;
+  background-color: #fff9fa;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+
+.hero .avatar img {
+  width: 60%;
+  height: auto;
+}
+
+.portfolio {
+  padding: 2em 0;
+}
+
+.portfolio img {
+  width: 100%;
+  /* height auto because width can change slightly to maintain 100% */
+  height: auto;
+}
+
+.grid {
+  display: flex;
+  /* default behavior for when we get to larger sizes */
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.grid .column {
+  /* mobile view, items will never be side by side */
+  width: 100%;
+  margin-bottom: 1.5em;
+}
+
+.contact {
+  padding: 2em 0;
+}
+
+.contact .phone {
+  margin-top: 2em;
+}
+
+.footer {
+  padding-bottom: 2em;
+}
+
+.footer .footer-border {
+  border-top: 1px solid #cacaca;
+}
+
+/* targetting this container specifically because there are 2 */
+.footer .footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2em;
+}
+
+.footer h3 {
+  margin: 0;
+}
+
+.footer .top-link {
+  color: #444;
+}
+
+.footer .footer-nav {
+  display: none;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .header .nav ul {
+    display: flex;
+    justify-content: center;
+  }
+
+  /* 1)remove margin from top from when they were stacked 2)add left margin to space horizontally */
+  .header .nav li + li {
+    margin: 0 0 0 2em;
+  }
+
+  .hero .container {
+    display: flex;
+    /* display img on right */
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+
+  .hero .avatar {
+    margin-left: 2em;
+  }
+
+  .grid .column {
+    width: 48%;
+  }
+
+  .contact .container {
+    max-width: 500px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header .nav {
+    margin-top: 0;
+  }
+
+  .grid .column {
+    width: 31%;
+  }
+
+  .footer .top-link {
+    display: none;
+  }
+
+  .footer .footer-nav {
+    display: flex;
+    list-style: none;
+  }
+
+  .footer .footer-nav li + li {
+    margin-left: 1em;
+  }
+
+  .footer .footer-nav a {
+    color: #444;
+  }
+}
